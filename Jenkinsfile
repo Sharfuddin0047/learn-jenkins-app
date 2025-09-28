@@ -38,7 +38,7 @@ pipeline {
          stage ('E2E') {
             agent {
                 docker {
-                    image 'docker run -it --rm --ipc=host mcr.microsoft.com/playwright:v1.55.0-noble /bin/bash'
+                    image 'mcr.microsoft.com/playwright:v1.55.0-noble'
                     reuseNode true
                 }
             }
