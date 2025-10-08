@@ -93,7 +93,13 @@ pipeline {
                 '''
             }
         }
-
+        stage('Aaroval') {
+            steps {
+                timeout(time: 1, unit: 'HOURS') {
+                    input 'Ready to deploy?'
+                }
+            }
+        }
         stage('Deploy prod') {
             agent {
                 docker {
