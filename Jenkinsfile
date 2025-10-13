@@ -4,6 +4,7 @@ pipeline {
     environment {
         NETLIFY_SITE_ID = '70d69a03-e79a-4f01-b94b-840956e9c378'
         NETLIFY_AUTH_TOKEN = credentials('netlify-token')
+        REACT_APP_VERSION = '1.2.3'
     }
 
     stages {
@@ -108,15 +109,7 @@ pipeline {
             }
         }
 
-        stage('Approval') {
-            steps {
-                timeout(time: 15, unit: 'MINUTES') {
-                    input message: 'Do you wish to deploy to production?', ok: 'Yes, I am sure!'
-                }
-            }
-        }
-
-        stage('Deploy E2E') {
+        stage('Deploy prod') {
             agent {
                 docker {
                     image 'mcr.microsoft.com/playwright:v1.39.0-jammy'
