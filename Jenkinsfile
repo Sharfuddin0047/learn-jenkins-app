@@ -19,7 +19,6 @@ pipeline {
             steps {
                 sh'''
                     aws --version
-                    args "entrypoint=''"
                 '''
             }
         }
