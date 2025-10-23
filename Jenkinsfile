@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         REACT_APP_VERSION = "1.0.$BUILD_ID"
-        APP_NAME = 'LearnJenkinsApp'
+        APP_NAME = 'learnjenkinsapp'
         AWS_DEFAULT_REGION = 'us-east-1'
         AWS_ECS_CLUSTER = 'LearnJenkins'
         AWS_ECS_SERVICE_PROD = 'LearnJenkinsApp-Service-Prod'
