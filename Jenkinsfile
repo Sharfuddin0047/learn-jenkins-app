@@ -41,7 +41,7 @@ pipeline {
 
             steps {
                 sh '''
-                    amazon-linux-extras enable docker
+                    dnf install -y docker
                     docker build -t myjenkinsapp .
                 '''
             }
